@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Horário</title>
+</head>
+<body>
+    <h1>Registro de Horário</h1>
+    <div>
+    <label for="nome">Nome do Funcionário:</label>
+    <input type="text" id="nome">
+    <button onclick="registrarEntrada()">Registrar Entrada</button>
+    <button onclick="registrarSaida()">Registrar Saída</button>
+    </div>
+    <div id="relatorio">
+    <h2>Relatório</h2>
+    <ul id="registros"></ul>
+    <button onclick="gerarRelatorio()">Gerar Relatório</button>
+    </div>
+    
+    <script src="home.js"></script>
+
+
+</body>
+</html>
