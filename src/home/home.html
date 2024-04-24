@@ -3,20 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <title>Registro de Horário</title>
 </head>
 <body>
-    <h1>Registro de Horário</h1>
-    <div>
-    <label for="nome">Nome do Funcionário:</label>
-    <input type="text" id="nome">
-    <button onclick="registrarEntrada()">Registrar Entrada</button>
-    <button onclick="registrarSaida()">Registrar Saída</button>
-    </div>
-    <div id="relatorio">
-    <h2>Relatório</h2>
-    <ul id="registros"></ul>
-    <button onclick="gerarRelatorio()">Gerar Relatório</button>
+
+    <div class="fullContainer">
+
+        <div class="invisible">
+
+        </div>
+
+        <div class="container"> 
+
+            <div class="formulario">
+
+                <div class="title">
+
+                    <h1>Registro de Horário</h1>
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <h1> Manual de uso </h1>
+
+                    <p> Colocando o nome do Colaborador pode se apertar o</p>
+                    <p> botão Registar entrada ou Registrar saida  </p>
+                    <p> a pos isso se apertar gerar relatorio sera mostrado </p>
+                    <p> um relatorio com as entradas de todos os funcionarios listado ate então </p>
+
+                   
+
+                    <h1>Registro</h1>
+                    <div class="containerButton">
+
+                        <label for="nome"><b>Nome do Colaborador : </b> </label>
+                        <input type="text" id="nome">
+
+                    </div>
+                    
+
+                    <div class="containerButton">
+
+                        <button class="button buttonEntrada" onclick="registrarEntrada()">Registrar Entrada</button>
+                        <button class="button buttonSaida" onclick="registrarSaida()">Registrar Saída</button>
+
+                    </div>
+                    
+
+                </div>
+
+                <div id="relatorio">
+
+                        <h1>Relatório</h1>
+                        <ul id="registros"></ul>
+
+                        <div class="containerButton">
+
+                            <button class="button buttonRelatorio " onclick="gerarRelatorio()">Gerar Relatório</button>
+                            
+                            <button class="button buttonRelatorio " onclick="limparRegistrosDaSessao()">Gerar Relatório</button>
+                        </div>
+                </div>
+
+            </div>
+
+        </div>  
+
+        <div class="invisible">
+
+        </div>
+
     </div>
     
     <script src="home.js"></script>

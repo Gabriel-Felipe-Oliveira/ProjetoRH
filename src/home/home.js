@@ -21,7 +21,7 @@
         const registros = obterRegistrosDaSessao();
         registros.push({ nome, entrada });
         salvarRegistrosNaSessao(registros);
-        alert(`Entrada registrada para ${nome} às ${entrada.toLocaleTimeString}`);
+        alert(`Entrada registrada para ${nome} às ${entrada.toLocaleTimeString()}`);
     }
 
       // Função para registrar a saída do funcionário
@@ -42,16 +42,26 @@
     }
 
       // Função para gerar o relatório
-    function gerarRelatorio() {
+      function gerarRelatorio() {
         const listaRegistros = document.getElementById('registros');
         listaRegistros.innerHTML = ''; // Limpar o conteúdo anterior
         const registros = obterRegistrosDaSessao();
+        alert(registros);
         for (let registro of registros) {
-        const item = document.createElement('li');
-        item.textContent = `${registro.nome} - Entrada: ${registro.entrada.toLocaleTimeString}, Saída: ${registro.saida ? registro.saida.toLocaleTimeString() : 'Não registrada'}`;
-        listaRegistros.appendChild(item);
+            const item = document.createElement('li');
+            const entradaFormatada = registro.entrada instanceof Date ? registro.entrada.toLocaleTimeString() : 'Não disponível';
+            const saidaFormatada = registro.saida ? registro.saida.toLocaleTimeString : 'Não registrada';
+            item.textContent = `${registro.nome} - Entrada: ${entradaFormatada}, Saída: ${saidaFormatada}`;
+            listaRegistros.appendChild(item);
         }
     }
+
+    function limparRegistrosDaSessao() {
+      localStorage.removeItem('registrosDaSessao');
+      location.reload();
+      listaRegistros.removeChild();
+
+  }
 
     window.onload = gerarRelatorio;
     
